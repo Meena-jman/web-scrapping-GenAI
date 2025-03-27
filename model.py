@@ -177,4 +177,4 @@ for filename in txt_files:
 df = pd.DataFrame(results, columns=["Company"] + questions)
 df.to_csv(output_csv, index=False, encoding="utf-8")
 
-print(f"✅ Results saved to {output_csv}")
+print(f"Successfull {output_csv}")

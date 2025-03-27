@@ -4,7 +4,7 @@
 # import google.generativeai as genai
 
 # # Configure Gemini API (Replace with your actual API key)
-# genai.configure(api_key="AIzaSyDkeb4BiVaPwBWPsav0XBqtp5yilqI2URI")
+# genai.configure(api_key="PI")
 
 # # Define questions
 # questions = [

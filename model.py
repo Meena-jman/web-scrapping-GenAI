@@ -47,6 +47,7 @@ def send_to_gemini(content):
 
     model = genai.GenerativeModel("gemini-2.0-flash")
     response = model.generate_content(prompt)
+    # print(response.text.strip())
 
     return response.text.strip() if response.text else "No information available"
 
@@ -75,9 +76,9 @@ for filename in txt_files:
     # Answers 
     raw_response = send_to_gemini(content)
     structured_answers = extract_answers(raw_response)
-
+    # print(f"Structured answers: {structured_answers}")
     results.append([company_name] + structured_answers)
-
+# print(results)
 df = pd.DataFrame(results, columns=["Company"] + questions)
 df.to_csv(output_csv, index=False, encoding="utf-8")
 

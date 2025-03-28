@@ -4,10 +4,10 @@ import time
 
 
 website_pages = [ 
-            # "https://www.gsk.com", 
-            # "https://www.tcs.com", 
-            # "https://www.ford.com", 
-            # "https://www.nespresso.com", 
+            "https://www.gsk.com", 
+            "https://www.tcs.com", 
+            "https://www.ford.com", 
+            "https://www.nespresso.com", 
             "https://www.siemens-energy.com", 
             "https://www.lenovo.com", 
             "https://www.theheinekencompany.com",
@@ -36,9 +36,6 @@ for website in website_pages:
     time.sleep(3) 
   
     all_urls = extract_links() 
-    # domain_name = website.split("//")[-1].replace(".", "_") 
-    # output_file = f"{domain_name}_scraped_data.txt"
-
     domain_name = website.split("//")[-1].split(".")[1] if "www." in website else website.split("//")[-1].split(".")[0]
     output_file = f"{domain_name}.txt"
 

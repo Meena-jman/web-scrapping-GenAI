@@ -20,7 +20,6 @@ output_csv = os.path.join(data_dir, "company_output.csv")
 
 results = []
 
-# txt_files = [f for f in os.listdir(data_dir) if f.endswith("_scraped_data.txt")]
 txt_files = [f for f in os.listdir(data_dir) if f.endswith(".txt")]
 
 def send_to_gemini(content):
@@ -66,7 +65,6 @@ def extract_answers(response_text):
     return answers
 
 for filename in txt_files:
-    # company_name = filename.replace("www_", "").replace("_com_scraped_data.txt", "").replace("_", ".")
     company_name = filename.replace(".txt", "")
 
     file_path = os.path.join(data_dir, filename)

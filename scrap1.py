@@ -16,12 +16,13 @@ website_pages = [
             "https://www.starbucks.com"
             ] 
 driver = webdriver.Chrome() 
+
 def extract_links():
-    navbar_links = driver.find_elements(By.CSS_SELECTOR, "nav a") 
+    nav_links = driver.find_elements(By.CSS_SELECTOR, "nav a") 
     footer_links = driver.find_elements(By.CSS_SELECTOR, "footer a") 
-    navbar_urls = [link.get_attribute("href") for link in navbar_links if link.get_attribute("href")] 
+    nav_urls = [link.get_attribute("href") for link in nav_links if link.get_attribute("href")] 
     footer_urls = [link.get_attribute("href") for link in footer_links if link.get_attribute("href")] 
-    return set(navbar_urls + footer_urls) 
+    return set(nav_urls + footer_urls) 
 
 def extract_page_data(url):
     driver.get(url) 
@@ -31,6 +32,8 @@ def extract_page_data(url):
    
     except: 
         return "Could not extract data." 
+    
+
 for website in website_pages: 
     driver.get(website) 
     time.sleep(3) 

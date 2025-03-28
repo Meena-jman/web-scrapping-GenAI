@@ -28,7 +28,7 @@ def send_to_gemini(content):
     
     {content}
     
-    Given this information, please answer the following questions concisely:
+    Answer the following questions:
     1. {questions[0]}
     2. {questions[1]}
     3. {questions[2]}
